@@ -1,0 +1,591 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family:  "Bebas Neue";
+}
+/*Complete Page*/
+.completepage{
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*Complete Page*/
+
+/*Sidebar*/
+.sidebar{
+  width: 250px;
+  height: 100vh;
+  background-color: black;
+  border-right: 1px solid rgba(50, 50, 50, 0.500);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+}
+.companydiv{
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.500);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.companylogo{
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.companylogoimage{
+  width: 30px;
+}
+.companyname{
+  color: rgb(151, 151, 151);
+  font-size: 25px;
+  font-weight: 200;
+}
+.infodiv{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.linkdiv{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 40px;
+  background-color: black;
+  padding-top: 10px;
+}
+.devdiv{
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  border-top: 1px solid rgba(50, 50, 50, 0.500);
+}
+.linkbutton{
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.linkimage{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linkimageimage{
+  width: 20px;
+}
+.linktag{
+  color: grey;
+}
+.linkbutton:hover{
+  background-color: rgb(7, 7, 7);
+  transition: 0.3s;
+  color: white;
+  cursor: pointer;
+}
+.linkbutton:hover .linktag{
+  color: white;
+  transition: 0.3s;
+}
+.textdec{
+  text-decoration: none;
+  width: 100%;
+}
+
+
+/*Sidebar*/
+
+
+/*Mainbar*/
+.mainbar{
+  width: calc(100% - 250px);
+  height: 100vh;
+  background-color: black;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/*Mainbar*/
+
+/*Homepage*/
+.heading{
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.500);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.headingtag{
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+  margin-left: 40px;
+}
+.mainbarpage{
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* background-color: grey; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mainpagetags{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tagcards{
+  width: 30%;
+  height: 200px;
+  background-color: rgb(17, 17, 17);
+  margin: 1%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.totalordertag{
+  background: url('/gradient1.png');
+  background-position: center;
+  background-size: cover;
+}
+.processedordertag{
+  background: url('/gradient3.png');
+  background-position: center;
+  background-size: cover;
+}
+.remainingorderstag{
+  background: url('/gradient2.png');
+  background-position: center;
+  background-size: cover;
+}
+.topcard{
+  width: 90%;
+  height: 20%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.middlecard{
+  width: 90%;
+  height: 70%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.bottomcard{
+  width: 90%;
+  height: 0%;
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardicon{
+  height: 80%;
+  filter: invert(1);
+}
+.cardtoptag{
+  color: white;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.ordernumber{
+  font-size: 130px;
+  color: white;
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
+.recentorderssection{
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.recentorderheading{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: grey;
+  font-size: 25px;
+  font-weight: 1px;
+  font-weight: 200;
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+.recentordersdiv{
+  width: 95%;
+  height: 100px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 0px;
+  margin-bottom:0px;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.500);
+  border-top: 1px solid rgba(50, 50, 50, 0.500);
+}
+.sno{
+  width: 30px;
+  height: 100%;
+  /* background-color: blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+.itemimage{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productimage{
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+}
+.itemid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 100%;
+  color: grey;
+  font-weight: 100;
+  font-size: 20px;
+}
+.custname{
+  width: 150px;
+}
+.status{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  border-radius: 40px;
+  padding: 5px;
+  padding-right: 10px;
+  color: white;
+  font-size: 12px;
+}
+.redcircle{
+  width:15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+  margin-right: 10px;
+}
+
+
+
+@media (max-width:600px){
+  .completepage{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  /*Sidebar Responsive*/
+  .sidebar{
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    border-top: 1px solid rgba(50, 50, 50, 0.500);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .companydiv{
+    display: none;
+  }
+  .devdiv{
+    display: none;
+  }
+  .infodiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .linkdiv{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0px;
+    background-color: black;
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .linkbutton{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .linkimage{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .linkimageimage{
+    width: 30px;
+  }
+  .linktag{
+    color: grey;
+    display: none;
+  }
+  .linkbutton:hover{
+    background-color: rgb(7, 7, 7);
+    transition: 0.3s;
+    color: white;
+    cursor: pointer;
+  }
+  .linkbutton:hover .linktag{
+    color: white;
+    transition: 0.3s;
+  }
+  .textdec{
+    text-decoration: none;
+    width: 100%;
+  }
+  /*Sidebar Responsive*/
+
+
+  /*Mainbar Responsive*/
+  .mainbar{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .heading{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.500);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .headingtag{
+    color: white;
+    font-size: 30px;
+    font-weight: 200;
+    margin-left: 0px;
+  }
+  .mainbarpage{
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* background-color: grey; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .mainpagetags{
+    width: 95%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tagcards{
+    width: 30%;
+    height: 150px;
+    background-color: rgb(17, 17, 17);
+    margin: 1%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .totalordertag{
+    background: url('/gradient1.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .processedordertag{
+    background: url('/gradient3.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .remainingorderstag{
+    background: url('/gradient2.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .topcard{
+    width: 90%;
+    height: 40%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .middlecard{
+    width: 90%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bottomcard{
+    width: 90%;
+    height: 0%;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cardicon{
+    height: 50%;
+    filter: invert(1);
+  }
+  .cardtoptag{
+    color: white;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-size: 10px;
+  }
+  .ordernumber{
+    font-size: 60px;
+    color: white;
+    letter-spacing: 2px;
+    margin-left: 10px;
+  }
+  .recentordersdiv{
+    width: 95%;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 0px;
+    margin-bottom:0px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.500);
+    border-top: 1px solid rgba(50, 50, 50, 0.500);
+  }
+  .sno{
+    width: 15px;
+    height: 100%;
+    /* background-color: blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .itemimage{
+    width: 50px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .productimage{
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+  }
+  .itemid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 100%;
+    color: grey;
+    font-weight: 100;
+    font-size: 12px;
+  }
+  .custname{
+    width: 100px;
+  }
+  .status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    border-radius: 40px;
+    padding: 5px;
+    padding-right: 10px;
+    color: white;
+    font-size: 10px;
+  }
+  .redcircle{
+    width:8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 10px;
+  }
+  
+
+  
+}
+
+
+
+@media (max-width:1000px) and (min-width:600px){
+  .cardtoptag{
+    color: white;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  .ordernumber{
+    font-size: 80px;
+    color: white;
+    letter-spacing: 2px;
+    margin-left: 10px;
+  }
+}
