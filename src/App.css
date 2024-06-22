@@ -605,11 +605,162 @@ body{
   padding-right: 20px;
   color: white;
 }
+.ordersection{
+  width: 100%;
+  height: auto;
+  padding-bottom: 40px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.orderpagecard{
+  width: 75%;
+  height: 200px;
+  border-top: 1px solid rgba(50, 50, 50, 0.500);
+  border-bottom: 1px solid rgba(50, 50, 50, 0.500);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+}
+.snoimage{
+  width: 250px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.prodimageorderpage{
+  width: 160px;
+  border-radius: 10px;
+  margin-left: 15px;
+}
+.idquantity{
+  width: 150px;
+  color: grey;
+  font-weight: 400;
+  font-size: 20px;
+}
+.custnameorderpage{
+  width: 250px;
+}
+.buttonsection{
+  width: 120px;
+  height: 100%;
+  display: flex;
+  justify-content: center;align-items: center;
+  flex-direction: column;
+}
+.markasdonebutton{
+ width: 100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: green;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.rejectorderbutton{
+  width: 100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media (max-width:600px){
   .orderheadingtag{
     margin-left: 40px;
     font-size: 25px;
   } 
+  .ordersection{
+    width: 100%;
+    height: auto;
+    padding-bottom: 100px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .orderpagecard{
+    width: 95%;
+    height: 
+    150px;
+    border-top: 1px solid rgba(50, 50, 50, 0.500);
+    border-bottom: 1px solid rgba(50, 50, 50, 0.500);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .snoimage{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+  .prodimageorderpage{
+    width: 90%;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-top: 20px;
+  }
+  .idquantity{
+    width: 20%;
+    color: grey;
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .custnameorderpage{
+    width: 20%;
+  }
+  .buttonsection{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;align-items: center;
+    flex-direction: column;
+  }
+  .markasdonebutton{
+   width: 60px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .rejectorderbutton{
+    width: 60px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+  
 }
