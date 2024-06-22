@@ -685,6 +685,9 @@ body{
   background-color: rgba(0, 128, 0, 0.2);
   border-radius: 20px;
 }
+.greenborder{
+  border: 1px solid green;
+}
 .greencircle{
   width: 15px;
   height: 15px;

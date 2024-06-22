@@ -1,4 +1,76 @@
+import React from 'react';
+
 export default function Home() {
+  const inventory = {
+    items: [
+      {
+        id: '1',
+        name: 'Nike Airmax Pro',
+        Stock: 100,
+        image: '../prod1.jpg',
+      },
+      {
+        id: '2',
+        name: 'Adidas Sachin Edition',
+        Stock: 150,
+        image: '../prod2.jpg',
+      },
+      {
+        id: '3',
+        name: 'Nike Air Jordan 1',
+        Stock: 50,
+        image: '../prod3.jpg',
+      },
+      {
+        id: '4',
+        name: 'Reebok Athlete',
+        Stock: 250,
+        image: '../prod4.jpg',
+      },
+    ],
+    orders: [
+      {
+        orderid: '1',
+        customername: 'Abhishek Jain',
+        orderitem: [
+          {
+            id: '1',
+            name: 'Nike Air Jordan 1',
+            quantity: '2',
+            image: '../prod3.jpg',
+          },
+        ],
+        status: 'Pending',
+      },
+      {
+        orderid: '2',
+        customername: 'Shailee Jain',
+        orderitem: [
+          {
+            id: '2',
+            name: 'Adidas Sachin Edition',
+            quantity: '5',
+            image: '../prod2.jpg',
+          },
+        ],
+        status: 'Done',
+      },
+      {
+        orderid: '3',
+        customername: 'Lokesh Jain',
+        orderitem: [
+          {
+            id: '3',
+            name: 'Reebok Athlete',
+            quantity: '10',
+            image: '../prod4.jpg',
+          },
+        ],
+        status: 'Pending',
+      },
+    ],
+  };
+
   return (
     <div className="home mainbar">
       <div className="heading">
@@ -6,13 +78,19 @@ export default function Home() {
       </div>
 
       <div className="mainbarpage">
-        <Mainpagetags />
-        <RecentOrdersection />
+        <Mainpagetags orders={inventory.orders} />
+        <RecentOrdersection orders={inventory.orders} />
       </div>
     </div>
   );
 
-  function Mainpagetags() {
+  function Mainpagetags({ orders }) {
+    const totalOrders = orders.length;
+    const processedOrders = orders.filter(
+      (order) => order.status === 'Done'
+    ).length;
+    const remainingOrders = totalOrders - processedOrders;
+
     return (
       <div className="mainpagetags">
         <div className="totalordertag tagcards">
@@ -21,7 +99,7 @@ export default function Home() {
             <div className="cardtoptag">Total Orders</div>
           </div>
           <div className="middlecard">
-            <div className="ordernumber">50</div>
+            <div className="ordernumber">{totalOrders}</div>
           </div>
           <div className="bottomcard"></div>
         </div>
@@ -31,7 +109,7 @@ export default function Home() {
             <div className="cardtoptag">Processed Orders</div>
           </div>
           <div className="middlecard">
-            <div className="ordernumber">50</div>
+            <div className="ordernumber">{processedOrders}</div>
           </div>
           <div className="bottomcard"></div>
         </div>
@@ -41,7 +119,7 @@ export default function Home() {
             <div className="cardtoptag">Remaining Orders</div>
           </div>
           <div className="middlecard">
-            <div className="ordernumber">50</div>
+            <div className="ordernumber">{remainingOrders}</div>
           </div>
           <div className="bottomcard"></div>
         </div>
@@ -49,58 +127,21 @@ export default function Home() {
     );
   }
 
-  function RecentOrdersection() {
+  function RecentOrdersection({ orders }) {
     return (
       <div className="recentorderssection">
         <div className="recentorderheading">Recent Orders</div>
-        <OrderCard
-          sno={'1'}
-          image={'prod1.jpg'}
-          id={'12AB34'}
-          itemcount={'2'}
-          custname={'Abhishek Jain'}
-          status={'Pending'}
-        />
-        <OrderCard
-          sno={'2'}
-          image={'prod1.jpg'}
-          id={'12AB34'}
-          itemcount={'2'}
-          custname={'Ronak Jain'}
-          status={'Pending'}
-        />
-        <OrderCard
-          sno={'3'}
-          image={'prod1.jpg'}
-          id={'12AB34'}
-          itemcount={'2'}
-          custname={'Lokesh Jain'}
-          status={'Pending'}
-        />
-        <OrderCard
-          sno={'4'}
-          image={'prod1.jpg'}
-          id={'12AB34'}
-          itemcount={'2'}
-          custname={'Kalash Jain'}
-          status={'Done'}
-        />
-        <OrderCard
-          sno={'5'}
-          image={'prod1.jpg'}
-          id={'12AB34'}
-          itemcount={'2'}
-          custname={'Shailee Jain'}
-          status={'Done'}
-        />
-        <OrderCard
-          sno={'6'}
-          image={'prod1.jpg'}
-          id={'12AB34'}
-          itemcount={'2'}
-          custname={'Aarya Jain'}
-          status={'Pending'}
-        />
+        {orders.map((order, index) => (
+          <OrderCard
+            key={order.orderid}
+            sno={index + 1}
+            image={order.orderitem[0].image}
+            id={order.orderid}
+            itemcount={order.orderitem[0].quantity}
+            custname={order.customername}
+            status={order.status}
+          />
+        ))}
       </div>
     );
   }
@@ -115,9 +156,11 @@ export default function Home() {
         <div className="itemid">Id - {id}</div>
         <div className="itemid">No - {itemcount}</div>
         <div className="itemid custname">Customer Name : {custname}</div>
-        <div className="status">
-          {' '}
-          <div className="redcircle"></div> {status}
+        <div className={`status ${status === 'Pending' ? '' : 'greenborder'}`}>
+          <div
+            className={status === 'Pending' ? 'redcircle' : 'greencircle'}
+          ></div>
+          {status}
         </div>
       </div>
     );
