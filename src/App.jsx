@@ -3,6 +3,7 @@ import AddItems from './pages/AddItems';
 import Home from './pages/Home';
 import Inventory from './pages/Inventory';
 import Order from './pages/Order';
+import OrderDetails from './pages/OrderDetails';
 import Search from './pages/Search';
 // import Mainbar from './mainbar/Mainbar';
 import Sidebar from './sidebar/Sidebar';
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Order" element={<Order />} />
+          <Route path="/Order/:orderId" element={<OrderDetails />} />
           <Route path="/Inventory" element={<Inventory />} />
           <Route path="/AddItems" element={<AddItems />} />
           <Route path="/Search" element={<Search />} />
