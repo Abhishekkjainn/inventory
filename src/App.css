@@ -569,9 +569,6 @@ body{
     background-color: red;
     margin-right: 10px;
   }
-  
-
-  
 }
 
 
@@ -590,4 +587,29 @@ body{
     letter-spacing: 2px;
     margin-left: 10px;
   }
+}
+
+
+/*Order Page*/
+.orderheading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter{
+  background-color: royalblue;
+  margin-right: 40px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+}
+
+
+@media (max-width:600px){
+  .orderheadingtag{
+    margin-left: 40px;
+    font-size: 25px;
+  } 
 }
