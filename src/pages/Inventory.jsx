@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Inventory() {
+  // State to manage inventory data
   const [inventory, setInventory] = useState({
     items: [
       {
@@ -77,6 +78,7 @@ export default function Inventory() {
     ],
   });
 
+  // Function to delete an item from inventory
   const deleteItem = (id) => {
     setInventory((prevInventory) => ({
       ...prevInventory,
@@ -86,10 +88,13 @@ export default function Inventory() {
 
   return (
     <div className="inventory mainbar">
+      {/* Heading section */}
       <div className="heading">
         <div className="headingtag">Inventory</div>
       </div>
+      {/* Total items count */}
       <div className="totalitems">Total Items - {inventory.items.length}</div>
+      {/* Table headers */}
       <div className="inventoryheads">
         <div className="invsno">Sno.</div>
         <div className="invimg">Prod. Image</div>
@@ -100,7 +105,9 @@ export default function Inventory() {
           <div className="deleteitem">Delete</div>
         </div>
       </div>
+      {/* Inventory items section */}
       <div className="inventorysection">
+        {/* Map through inventory items and render each item as InvCard component */}
         {inventory.items.map((item, index) => (
           <InvCard
             key={item.id}
@@ -116,16 +123,23 @@ export default function Inventory() {
     </div>
   );
 
+  // Component for displaying each inventory item card
   function InvCard({ index, imgsource, id, invname, invcount, onDelete }) {
     return (
       <div className="invcard">
+        {/* Serial number */}
         <div className="invsno">{index}</div>
+        {/* Product image */}
         <div className="invimg">
           <img src={imgsource} alt="" className="invimgimg" />
         </div>
+        {/* Product ID */}
         <div className="invid">{id}</div>
+        {/* Product name */}
         <div className="invname">{invname}</div>
+        {/* Product count/stock */}
         <div className="invquantity">{invcount}</div>
+        {/* Delete button */}
         <div className="invbutton">
           <button className="deleteitembutton" onClick={() => onDelete(id)}>
             Delete

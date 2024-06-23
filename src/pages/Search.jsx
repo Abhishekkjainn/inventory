@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Search() {
+  // Mock inventory data
   const inventory = {
     items: [
       {
@@ -71,35 +72,44 @@ export default function Search() {
     ],
   };
 
+  // State for search term input and filtered items
   const [searchTerm, setSearchTerm] = useState('');
-  const [items, setItems] = useState(inventory.items);
+  const [items, setItems] = useState(inventory.items); // Initialize items with all inventory items
 
+  // Handler for search input change
   const handleSearch = (event) => {
-    const value = event.target.value.toLowerCase();
-    setSearchTerm(value);
+    const value = event.target.value.toLowerCase(); // Convert search input to lowercase for case-insensitive search
+    setSearchTerm(value); // Update search term state
+    // Filter items based on search term match in item name
     const filteredItems = inventory.items.filter((item) =>
       item.name.toLowerCase().includes(value)
     );
-    setItems(filteredItems);
+    setItems(filteredItems); // Update items state with filtered items
   };
 
+  // Handler to delete an item
   const deleteItem = (id) => {
-    const updatedItems = items.filter((item) => item.id !== id);
-    setItems(updatedItems);
+    const updatedItems = items.filter((item) => item.id !== id); // Filter out the item with matching ID
+    setItems(updatedItems); // Update items state without the deleted item
   };
 
   return (
     <div className="search mainbar">
+      {/* Heading section */}
       <div className="heading">
         <div className="headingtag">Search Items</div>
       </div>
+
+      {/* Search bar section */}
       <div className="searchbardiv">
         <div className="group">
+          {/* Search icon */}
           <svg viewBox="0 0 24 24" aria-hidden="true" className="icon">
             <g>
               <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
             </g>
           </svg>
+          {/* Search input */}
           <input
             className="input"
             type="search"
@@ -109,6 +119,8 @@ export default function Search() {
           />
         </div>
       </div>
+
+      {/* Inventory table headers */}
       <div className="inventoryheads">
         <div className="invsno">Sno.</div>
         <div className="invimg">Prod. Image</div>
@@ -119,7 +131,10 @@ export default function Search() {
           <div className="deleteitem">Delete</div>
         </div>
       </div>
+
+      {/* Inventory items section */}
       <div className="inventorysection">
+        {/* Map through filtered items to display each item */}
         {items.map((item, index) => (
           <InvCard
             key={item.id}
@@ -135,6 +150,7 @@ export default function Search() {
     </div>
   );
 
+  // Component for rendering each inventory item card
   function InvCard({ index, imgsource, id, invname, invcount, onDelete }) {
     return (
       <div className="invcard">
@@ -146,6 +162,7 @@ export default function Search() {
         <div className="invname">{invname}</div>
         <div className="invquantity">{invcount}</div>
         <div className="invbutton">
+          {/* Delete button */}
           <button className="deleteitembutton" onClick={() => onDelete(id)}>
             Delete
           </button>
